@@ -23,6 +23,8 @@ class User(RadosgwRestAdminAction):
         parser.add_argument('-u', '--uid', help="User uid")
         parser.add_argument('--display-name', help="Display name")
         parser.add_argument('--subuser', help="Subuser name")
+        parser.add_argument('--email', help="The email address associated with the user")
+        parser.add_argument('--max-buckets', help="Specify the maximum number of buckets the user can own")
 
     @property
     def request_type(self):
@@ -32,15 +34,19 @@ class User(RadosgwRestAdminAction):
         return 'admin/user'
 
     def get_params(self, args):
-        paras = []
+        params = []
         if args.uid:
-            paras.append('uid=%s' % args.uid)
+            params.append('uid=%s' % args.uid)
         if args.display_name:
-            paras.append('display-name=%s' % args.display_name)
+            params.append('display-name=%s' % args.display_name)
         if args.subuser:
-            paras.append('subuser=%s' % args.subuser)
-
-        return paras
+            params.append('subuser=%s' % args.subuser)
+        if args.email:
+            params.append('email=%s' % args.email)
+        if args.max_buckets:
+            params.append('max-buckets=%s' % args.max_buckets)
+            
+        return params
 
 
 class UserInfo(User):
