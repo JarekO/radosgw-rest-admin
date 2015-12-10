@@ -21,4 +21,4 @@ With this use it should be possible to use the rest interface:
     export S3_HOSTNAME=radosgw1
     export S3_SECRET_ACCESS_KEY=Z08zn58H4l29zzXRXGJyzjUOsWeB7ugtYfmKh0MB
     
-    radosgw_rest_admin.py user-list --uid admin
+    radosgw_rest_admin.py user-info --uid admin
