@@ -38,7 +38,7 @@ setup(
     long_description=long_desc,
     license="Apache-2.0",
     keywords="ceph radosgw",
-    url="https://github.com/mkoderer/radosgw-rest-admin",
+    url="https://github.com/JarekO/radosgw-rest-admin",
     classifiers=[
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: Apache-2.0",
